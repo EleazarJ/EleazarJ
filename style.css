@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 2em;
+  background-color: #f9f9f9;
+}
+
+main {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 2em;
+}
+
+.question {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.radios label {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004f99;
+}
+
+.result {
+  margin-top: 2em;
+  padding: 1em;
+  background: #e6f2ff;
+  border: 1px solid #99c2ff;
+  border-radius: 4px;
+}
+
+.footer {
+  margin-top: 3em;
+  font-size: 0.9em;
+  border-top: 1px solid #ccc;
+  padding-top: 1em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  margin-bottom: 0.5em;
+}
+
+.footer a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
