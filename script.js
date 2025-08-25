@@ -22,18 +22,19 @@ const reponses = [
 ];
 
 // Génère dynamiquement le questionnaire
-const container = document.getElementById("questionsContainer");
-questions.forEach((text, index) => {
-  const div = document.createElement("div");
-  div.className = "question";
-  const qNum = index + 1;
-  div.innerHTML = `<label><strong>Question ${qNum}</strong> : ${text}</label><div class="radios">` +
-    reponses.map((label, val) =>
-      `<label><input type="radio" name="q${qNum}" value="${val}"> ${label}</label>`
-    ).join(' ') + `</div>`;
-  container.appendChild(div);
-});
-
+window.onload = function () {
+  const container = document.getElementById("questionsContainer");
+  questions.forEach((text, index) => {
+    const div = document.createElement("div");
+    div.className = "question";
+    const qNum = index + 1;
+    div.innerHTML = `<label><strong>Question ${qNum}</strong> : ${text}</label><div class="radios">` +
+      reponses.map((label, val) =>
+        `<label><input type="radio" name="q${qNum}" value="${val}"> ${label}</label>`
+      ).join(' ') + `</div>`;
+    container.appendChild(div);
+  });
+};
 // Applique le modèle logit (issu de model.js)
 function applyLogitModel(inputs) {
   const scores = logitModel.coefficients.map((coef, k) => {
