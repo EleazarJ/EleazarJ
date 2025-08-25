@@ -80,8 +80,7 @@ function positionACMPoint(x, y) {
 
 
 // Gère la soumission du formulaire
-document.getElementById("circularForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.getElementById("circularForm").addEventListener("submit", function (e) {
   const inputs = [];
   let total = 0;
 
@@ -98,10 +97,33 @@ document.getElementById("circularForm").addEventListener("submit", function(e) {
       }
     }
     if (!answered) {
-      alert("Merci de répondre à toutes les questions avant de soumettre votre formulaire");
+      e.preventDefault(); // on bloque si une question n'est pas remplie
+      alert("Merci de répondre à toutes les questions.");
       return;
     }
   }
+
+  // Ajoute les réponses comme champs cachés pour Web3Forms
+  inputs.forEach((val, i) => {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = `Question ${i + 1}`;
+    input.value = val;
+    this.appendChild(input);
+  });
+
+  // Affiche le résultat logit + remerciement
+  const result = applyLogitModel(inputs);
+  const [x, y] = computeACMCoordinates(inputs);
+  positionACMPoint(x, y);
+
+  document.getElementById("result").innerHTML =
+    `Score total : ${total}/50<br>` +
+    `Classe estimée : <strong>${result.predicted}</strong><br>` +
+    `Probabilités estimées : ${result.proba.join(' / ')}<br><br>` +
+    `<span style="color: green;">✅ Merci pour votre participation !</span>`;
+});
+
 
   const result = applyLogitModel(inputs);
   document.getElementById("result").innerHTML =
