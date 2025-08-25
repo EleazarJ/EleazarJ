@@ -1,6 +1,6 @@
 // Modèle logit multinomial simulé – cohérent avec un classement par score total
 const logitModel = {
-  intercepts: [-0.5, 0, 0.5],
+  intercepts: [-0.4, 0, 0.4],
   coefficients: [
     [-0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1], // Groupe 1
     [0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0],    // Groupe 2
