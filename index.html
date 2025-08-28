@@ -11,25 +11,16 @@
   <main>
     <h1>Estimation du profil circulaire</h1>
     <p>
-      Présentation du LUMEN\
-    
-      Introduction du projet...\
-    
-      Blablabla...\
+        Introduction du projet...
+        Blablabla...
         
-      Ce questionnaire vous permet de placer votre entreprise parmi notre échantillon de PME de la Région Hauts-de-France. Répondez simplement aux 10 questions qui suivent et cliquez sur le bouton "Soumettre".
+      Ce questionnaire vous permet de palcer votre entreprise parmi [combien ?] PME de la Région Hauts-de-France. Répondez simplement aux 10 questions qui suivent et cliquez sur le bouton "Soumettre".
     </p>
 
-    
-   <form id="circularForm" action="https://api.web3forms.com/submit" method="POST">
-<!-- Web3Forms configuration -->
-<input type="hidden" name="access_key" value="5ef97d78-bcfa-40bd-840f-e669d57ba8c7">
-<input type="hidden" name="subject" value="Nouvelle réponse au questionnaire ICPME">
-<input type="hidden" name="from_name" value="Formulaire Circularité">
-<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-  <div id="questionsContainer"></div>
-<button type="submit">Soumettre</button>
-</form>
+    <form id="circularForm">
+      <div id="questionsContainer"></div>
+      <button type="submit">Soumettre</button>
+    </form>
 
     <div class="result" id="result"></div>
     
